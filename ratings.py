@@ -3,7 +3,7 @@ import sys
 
 
 def read_ratings_from_file(file_name):
-    """ Create dictionary of restaurants' ratings from file"""
+    """ Create dictionary of restaurants' ratings from file."""
 
     ratings = {}
 
@@ -16,14 +16,14 @@ def read_ratings_from_file(file_name):
 
 
 def print_sorted_ratings(ratings):
-    """ Print sorted dictionary"""
+    """ Print sorted dictionary."""
 
     for restaurant, rating in sorted(ratings.items()):
         print "%s is rated at %s." % (restaurant, rating)
 
 
 def is_valid_score(score):
-    """Test whether a score is from 1 to 5"""
+    """Test whether a score is from 1 to 5."""
 
     try:
         score = int(score)
@@ -44,11 +44,11 @@ Press 3 to get out of here
 >> """
 
 while True:
-    choice = int(raw_input(prompt))
-    if choice == 1:
+    choice = raw_input(prompt)
+    if choice == "1":
         print_sorted_ratings(ratings)
         print
-    elif choice == 2:
+    elif choice == "2":
         new_restaurant = raw_input("Enter a new restaurant name: ")
         new_score = raw_input("Rate %s in range from 1 to 5: " % (new_restaurant))
         if is_valid_score(new_score):
@@ -57,7 +57,7 @@ while True:
         else:
             print "Sorry, this value is invalid. \nPlease, try again from the very beginning."
             continue
-    elif choice == 3:
+    elif choice == "3":
         break
     else:
         continue
